@@ -112,23 +112,6 @@ namespace WEB_projekat.Controllers
             Context.Remove(tre);
             await Context.SaveChangesAsync();
         }
-        /*[Route("BrisanjeTermina")]
-        [HttpDelete]
-        public async Task<IActionResult> BrisanjeTermina([FromBody] Termin termin)
-        {
-            var temp =  Context.Termini.Where(p => p.M == termin.M && p.N == termin.N).FirstOrDefault();
-            var raspored = await Context.Rasporedi.FindAsync(termin.Raspored);
-
-            if (temp != null )
-            {
-                raspored.MaxKapacitet--;
-                Context.Remove<Termin>(temp);
-                await Context.SaveChangesAsync();
-                return Ok();
-            }
-            else
-                return StatusCode(406);
-        }*/
 
         [Route("IzbrisiTermin/{n}/{m}/{id}")]
         [HttpDelete]
